@@ -264,3 +264,7 @@ textarea.form-control {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+.btn-light {
+  background: rgba(0, 0, 0, 0.05);
+}

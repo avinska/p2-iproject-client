@@ -57,7 +57,7 @@ export default {
     role="button"
     @click="$router.push(`/detail/${video.videoId}`)"
     v-if="video.title"
-    class="card col-md-3 border-0 my-1"
+    class="card col-md-3 border-0 mt-0 mb-3"
     style="max-width: 18rem"
   >
     <img :src="video.link" class="img-fluid rounded" alt="..." />
@@ -65,14 +65,16 @@ export default {
       <div class="col-2">
         <img :src="video.avatarUrl" class="w-100 p-1 rounded-circle" alt="" />
       </div>
-      <div class="col-10">
-        <h5 class="card-title fw-bold fs-6 mb-0">
-          {{ video.title.slice(0, 30) + "..." }}
+      <div class="col-9">
+        <h5 class="card-title fw-bold size-14 mb-0">
+          {{
+            video.title.slice(0, 40) + `${video.title.length > 40 ? "..." : ""}`
+          }}
         </h5>
-        <p class="card-text mb-0">
+        <p class="card-text mb-0 size-12">
           {{ video.channel }}
         </p>
-        <p class="card-text">
+        <p class="card-text size-12">
           {{ views }} views •
           {{ page === "likes" ? date : video.publishedDate }}
         </p>
@@ -88,5 +90,18 @@ export default {
 .col-10,
 .col-2 {
   padding: 0;
+}
+
+.card {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.size-14 {
+  font-size: 14px;
+}
+
+.size-12 {
+  font-size: 12px;
 }
 </style>

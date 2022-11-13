@@ -101,16 +101,16 @@ export default {
     <!-- tambah searchbar + btn speech recognition, akun, tombol lonceng di navbar  -->
     <section class="container-fluid my-3" id="home-section">
       <h1 class="text-center">
-        <span class="material-symbols-outlined"> favorite </span>
-        My Liked Videos
-        <span class="material-symbols-outlined"> favorite </span>
+        <!-- <span class="material-symbols-outlined"> favorite </span> -->
+        Liked Videos
+        <!-- <span class="material-symbols-outlined"> favorite </span> -->
       </h1>
       <div class="ms-sm-auto px-md-5">
         <div>
           <!-- tambah button isi category2 -->
           <CategoryBar />
         </div>
-        <div class="row gx-5 p-3">
+        <div v-if="likes.length > 0" class="row gx-5 p-3">
           <VideoCard
             v-for="(like, i) in likes"
             :key="i"
@@ -118,18 +118,22 @@ export default {
             :date="like.Video.publishedDate.slice(0, 10)"
             page="likes"
           />
-          <!-- isi homenya, render card video -->
-          <!-- <div class="d-flex flex-column align-items-center"> -->
-          <!-- <img
-                src="../assets/NothingFound-595b40b65ba036ed117d20ae.svg"
-                class="mt-5 pt-3 img-fluid w-25"
-                alt=""
-              />
-              <h4 class="fw-bold">OOPSIE</h4>
-              <p class="text-muted">
-                Sorry, we cannot find what you're looking for :&lpar;
-              </p> -->
-          <!-- </div> -->
+        </div>
+        <div class="text-center pt-4" v-else>
+          <img src="../assets/box.png" width="230" alt="" />
+          <div class="row m-5">
+            <p class="fw-bold fs-4 mb-2">Nothing to see here..</p>
+            <p class="fs-6">
+              Looks like you haven't added anything to your list
+            </p>
+            <div class="">
+              <a
+                @click.prevent="$router.push('/')"
+                class="btn btn-dark rounded-pill fw-bold px-5 text-decoration-none"
+                >Start adding one!</a
+              >
+            </div>
+          </div>
         </div>
         <!-- pagination -->
         <!-- <div v-if="totalPage > 1" class="d-flex justify-content-end mt-5">
