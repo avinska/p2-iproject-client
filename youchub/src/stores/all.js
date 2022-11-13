@@ -5,13 +5,14 @@ export const useAllStore = defineStore("counter", {
   state: () => ({
     videos: [],
     video: {},
-    // baseUrl: "http://localhost:3000",
-    baseUrl: "https://youchubb.herokuapp.com",
+    baseUrl: "http://localhost:3000",
+    // baseUrl: "https://youchubb.herokuapp.com",
     paymentResponse: "",
     isLogin: false,
     likes: [],
     profPic: "",
     isPremium: false,
+    isLoading: false,
   }),
   actions: {
     async register(user) {
@@ -61,10 +62,12 @@ export const useAllStore = defineStore("counter", {
     },
     async fetchVideos(keyword = "youtube") {
       try {
+        this.isLoading = true;
         let { data } = await axios({
           method: "get",
           url: `${this.baseUrl}/pub/videos?keyword=${keyword}`,
         });
+        this.isLoading = false;
         this.videos = data;
       } catch (error) {
         console.log("<<<< ini error fetchVideos");
