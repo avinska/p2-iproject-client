@@ -29,7 +29,7 @@ export default {
 
 <template>
   <nav
-    class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
+    class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse"
     id="sidebar-menu"
   >
     <div class="position-sticky pt-4 ms-1">
@@ -37,7 +37,7 @@ export default {
         <li class="nav-item">
           <a
             @click.prevent="$router.push('/')"
-            class="nav-link active"
+            class="nav-link"
             href=""
             id="nav-dashboard"
           >
@@ -103,7 +103,7 @@ export default {
           >
         </li>
       </ul>
-      <!-- <h6
+      <h6
         class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase"
       >
         <span>Subscriptions</span>
@@ -111,17 +111,60 @@ export default {
       <ul class="nav flex-column mb-2">
         <li class="nav-item">
           <a @click.prevent="" class="nav-link">
-            <span class="icon material-symbols-outlined me-3">person</span>Hej,
-            <span id="username">Ziady!</span></a
-          >
+            <img
+              src="https://yt3.ggpht.com/ytc/AMLnZu8fOEH7slYkWSVPXc5-7aiKhsz93NRtulPKHzAv3Q=s88-c-k-c0x00ffffff-no-rj"
+              alt=""
+              class="img-fluid rounded-circle me-2"
+              width="30"
+            />
+            Yulia Batschun
+          </a>
         </li>
         <li class="nav-item">
-          <a @click.prevent="" class="nav-link" href="" id="nav-logout">
-            <span class="icon material-symbols-outlined me-3">logout</span
-            >Logout</a
-          >
+          <a @click.prevent="" class="nav-link">
+            <img
+              src="https://yt3.ggpht.com/ytc/AMLnZu-VqpYmb-17O5nhVIBX3cA18oMQh0sy-sJ690AqTA=s88-c-k-c0x00ffffff-no-rj"
+              alt=""
+              class="img-fluid rounded-circle me-2"
+              width="30"
+            />
+            Devina Hermawan
+          </a>
         </li>
-      </ul> -->
+        <li class="nav-item">
+          <a @click.prevent="" class="nav-link">
+            <img
+              src="https://yt3.ggpht.com/ytc/AMLnZu-suO17gEU9kg0AEe5wR_qDCYdQeDeC1ANzq21BrA=s88-c-k-c0x00ffffff-no-rj"
+              alt=""
+              class="img-fluid rounded-circle me-2"
+              width="30"
+            />
+            Jess Dang
+          </a>
+        </li>
+        <li class="nav-item">
+          <a @click.prevent="" class="nav-link">
+            <img
+              src="https://yt3.ggpht.com/ytc/AMLnZu-gvNMCqNLnYDrF2a3kwHe7cSfmcA_9guf13AHGBg=s88-c-k-c0x00ffffff-no-rj"
+              alt=""
+              class="img-fluid rounded-circle me-2"
+              width="30"
+            />
+            Ken Jee
+          </a>
+        </li>
+        <li class="nav-item">
+          <a @click.prevent="" class="nav-link">
+            <img
+              src="https://yt3.ggpht.com/ytc/AMLnZu8nk-3KY81Pc22NNYXv4HSa1z5hpfL5zo8U8dZ_8A=s88-c-k-c0x00ffffff-no-rj"
+              alt=""
+              class="img-fluid rounded-circle me-2"
+              width="30"
+            />
+            Cooking With Dog
+          </a>
+        </li>
+      </ul>
     </div>
   </nav>
 </template>
